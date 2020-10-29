@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\OrderController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/home', function () {
     return Inertia\Inertia::render('Home');
 })->name('home');
+
+Route::resource('orders', OrderController::class);
